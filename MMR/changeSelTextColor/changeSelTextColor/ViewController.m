@@ -37,22 +37,17 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     DetailTableViewController *vc = [segue destinationViewController];
-    NSMutableArray *attrWords = [[NSMutableArray alloc] init];
-    NSDictionary *coloredWords = [[NSDictionary alloc] init];
+    
+    NSMutableArray *attrWords = [[[NSMutableArray alloc] init] autorelease];
     [_text.attributedText enumerateAttributesInRange:NSMakeRange(0, [_text.attributedText length])
                                              options:0
                                           usingBlock:^(NSDictionary *attributes, NSRange range, BOOL *stop) {
                                               if ([attributes objectForKey:NSForegroundColorAttributeName] != NULL) {
-                                                  NSLog(@"Found ForeGround Color: %@ in range %@", [attributes objectForKey:NSForegroundColorAttributeName], NSStringFromRange(range));
-                                              
-                                              [attrWords addObject:[_text.attributedText attributedSubstringFromRange:range]];
+                                                  [attrWords addObject:[_text.attributedText attributedSubstringFromRange:range]];
                                               }
                                           }];
-    vc.words = attrWords;
-    _name;
     
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    vc.words = attrWords;
 }
 
 
@@ -60,4 +55,8 @@
 {
    }
 
+- (void)dealloc {
+    [_text release];
+    [super dealloc];
+}
 @end

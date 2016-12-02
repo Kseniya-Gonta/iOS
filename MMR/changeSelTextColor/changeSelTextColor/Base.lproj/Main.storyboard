@@ -93,7 +93,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="text" destination="pC9-On-Nxx" id="CUj-Cn-kS5"/>
+                        <outlet property="text" destination="pC9-On-Nxx" id="1of-BP-xWy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -127,7 +127,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="words" destination="aOG-Kj-ClS" id="f3S-Yh-K6O"/>
+                                    <outlet property="words" destination="aOG-Kj-ClS" id="hEb-BL-rxC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

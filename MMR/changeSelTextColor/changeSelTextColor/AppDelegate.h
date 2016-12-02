@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AppDelegate.h
 //  changeSelTextColor
 //
 //  Created by Ksenya on 28.10.16.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextView *text;
-@property NSString *name;
+@property (retain, nonatomic) UIWindow *window;
+
 
 @end
 

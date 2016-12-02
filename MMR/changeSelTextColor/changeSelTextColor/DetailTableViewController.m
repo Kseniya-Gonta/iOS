@@ -94,4 +94,12 @@
 }
 */
 
+- (void)dealloc {
+    [_str release];
+    [_words release];
+    [_coloredWords release];
+    [super dealloc];
+}
+
+
 @end
